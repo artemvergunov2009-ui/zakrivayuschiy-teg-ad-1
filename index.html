@@ -4,15 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Закрывающий тег</title>
+
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
+
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+
+    <header class="header">
+      <h1 class="header__logo">&lt;/HTML&gt;</h1>
+      <p class="header__title">закрывающий тег</p>
+    </header>
+
+    <main class="content">
+
+      <section class="cards">
+
+        <!-- КАРТОЧКА -->
+        <article class="card">
+          <h2 class="card__title">1 спринт — чистый лист</h2>
+
+          <div class="card__image-wrapper">
+            <img src="./images/1.jpg" alt="..." class="card__image" />
+            <span class="card__label">start</span>
+          </div>
+
+          <div class="card__text">
+            <p>Начало пути.</p>
+          </div>
+
+          <div class="card__buttons">
+
+            <button class="card__icon-button">
+              <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36">
+                <path class="contour" d="M..." fill="black"/>
+                <path class="core" d="M..." fill="none"/>
+                <path class="main-body" d="M..." fill="none"/>
+                <path class="sparks" d="M..." fill="red"/>
+              </svg>
+            </button>
+
+            <button class="card__like-button">
+              <span class="button__text">Like</span>
+            </button>
+
+          </div>
+        </article>
+
+      </section>
+
+      <button class="save-button">
+        <span class="button__text">Сохранить на память</span>
+      </button>
+
+    </main>
+
+    <dialog class="dialog">
+      <p>Вставьте дискету, чтобы продолжить</p>
+      <button class="dialog__button">OK</button>
+    </dialog>
+
     <script src="./scripts/like.js"></script>
+    <script>
+      const dialog = document.querySelector('.dialog');
+      const openBtn = document.querySelector('.save-button');
+      const closeBtn = document.querySelector('.dialog__button');
+
+      openBtn.onclick = () => dialog.showModal();
+      closeBtn.onclick = () => dialog.close();
+    </script>
+
   </body>
 </html>
